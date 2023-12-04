@@ -1,6 +1,10 @@
 {
   "name": "aoc2023",
+  "dependencies": {
+    "lodash.isequal": "^4.5.0"
+  },
   "devDependencies": {
+    "@types/lodash.isequal": "^4.5.6",
     "@types/node": "18.11.15",
     "prettier": "^2.2.1",
     "tsx": "3.12.7",

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "composite": true,
+    "strict": true,
+    "useUnknownInCatchVariables": false,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true
+  },
+  "include": ["./utils.ts", "./1"],
+  "exclude": ["**/node_modules"]
+}
