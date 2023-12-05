@@ -30,8 +30,8 @@ const sumChars = (line: string): number => {
 };
 
 // Part 1
-const summed1 = parsed.map(sumChars);
-const result1 = summed1.reduce((acc, curr) => acc + curr, 0);
+const totals1 = parsed.map(sumChars);
+const result1 = Utils.sum(totals1);
 console.log(`Part 1 result: ${result1}`);
 
 // Part 2
@@ -73,7 +73,7 @@ const numberWordMap: Record<string, { replace: string; actual: number }> = {
     actual: 9,
   },
 };
-const summed2 = parsed.map((line) => {
+const totals2 = parsed.map((line) => {
   let replaced = line;
 
   Object.keys(numberWordMap).map((word) => {
@@ -83,8 +83,8 @@ const summed2 = parsed.map((line) => {
     );
   });
 
-  return { line, result: sumChars(replaced) };
+  return sumChars(replaced);
 });
 
-const result2 = summed2.reduce((acc, curr) => acc + curr.result, 0);
+const result2 = Utils.sum(totals2);
 console.log(`Part 2 result: ${result2}`);
