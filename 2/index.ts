@@ -30,7 +30,7 @@ const required = {
   blue: 14,
 };
 
-const totals = parsed
+const totals1 = parsed
   .filter((line) => {
     return line.countedSets.every((set) => {
       return (
@@ -42,5 +42,29 @@ const totals = parsed
   })
   .map((line) => line.id);
 
-const result = Utils.sum(totals);
-console.log(`Result: ${result}`);
+const result1 = Utils.sum(totals1);
+console.log(`Part 1 result: ${result1}`);
+
+const totals2 = parsed.map((line) => {
+  const minRed = Utils.maxBy(
+    line.countedSets,
+    (countedSet) => countedSet.red
+  )?.red;
+  const minGreen = Utils.maxBy(
+    line.countedSets,
+    (countedSet) => countedSet.green
+  )?.green;
+  const minBlue = Utils.maxBy(
+    line.countedSets,
+    (countedSet) => countedSet.blue
+  )?.blue;
+
+  if (!minRed || !minGreen || !minBlue) {
+    throw new Error(`Bad input: ${line}`);
+  }
+
+  return minRed * minGreen * minBlue;
+});
+
+const result2 = Utils.sum(totals2);
+console.log(`Part 2 result: ${result2}`);
